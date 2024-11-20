@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoSense: Smart Disposal & Decompose System</title>
+    <link rel="stylesheet" href="second.css" />
+    <!-- Linking to styles.css -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    <!-- QR Code library -->
+    <style>
+      /* Reset styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #8080f1;
+        color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .container {
+        background-color: #c0abab;
+        border-radius: 8px;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 300px;
+      }
+
+      header {
+        margin-bottom: 20px;
+      }
+
+      h1 {
+        font-size: 24px;
+        color: #2d6a4f;
+      }
+
+      button {
+        background-color: #2d6a4f;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #218c53;
+      }
+
+      .reward-message,
+      .company-selection,
+      .product-input,
+      .reward {
+        margin-top: 20px;
+      }
+
+      input {
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+        width: 80%;
+      }
+
+      input:focus {
+        outline: none;
+        border-color: #2d6a4f;
+      }
+
+      .reward-img {
+        max-width: 100%;
+        border-radius: 8px;
+        margin-top: 20px;
+      }
+
+      .company-list {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .company-list li {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .company-list li:hover {
+        background-color: #45a049;
+      }
+
+      /* QR Code styling */
+      #qrcode {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>EcoSense: Smart Disposal & Decompose System</h1>
+        <p>
+          Welcome to the EcoSense system. Click below to decompose your product
+          and earn rewards!
+        </p>
+      </header>
+
+      <main>
+        <!-- Button to start the disposal process -->
+        <button class="decompose-btn" id="decomposeBtn">Dispose</button>
+
+        <!-- Company selection section -->
+        <div
+          class="company-selection"
+          id="companySelection"
+          style="display: none"
+        >
+          <h3>Select a Disposal Company</h3>
+          <ul class="company-list">
+            <li data-company="Eco Waste Solutions">Eco Waste Solutions</li>
+            <li data-company="Green Disposal Services">
+              Green Disposal Services
+            </li>
+            <li data-company="Waste Management Co.">Waste Management Co.</li>
+            <li data-company="Tumakuru Waste Services">
+              Tumakuru Waste Services
+            </li>
+          </ul>
+        </div>
+
+        <!-- Product input section -->
+        <div class="product-input" id="productInput" style="display: none">
+          <input
+            type="text"
+            id="productName"
+            placeholder="Enter product name to dispose"
+          />
+          <button id="submitProductBtn">Submit</button>
+        </div>
+
+        <!-- Reward section -->
+        <div class="reward" id="reward" style="display: none">
+          <p>
+            You have successfully decomposed the product! Here’s your reward:
+          </p>
+          <div id="qrcode"></div>
+          <!-- QR code image will be generated here -->
+        </div>
+      </main>
+    </div>
+
+    <script>
+      const decomposeBtn = document.getElementById("decomposeBtn");
+      const companySelection = document.getElementById("companySelection");
+      const companyListItems = document.querySelectorAll(".company-list li");
+      const productInput = document.getElementById("productInput");
+      const submitProductBtn = document.getElementById("submitProductBtn");
+      const reward = document.getElementById("reward");
+      const productNameInput = document.getElementById("productName");
+      const qrcodeContainer = document.getElementById("qrcode");
+
+      // Show company selection when user clicks 'Dispose'
+      decomposeBtn.addEventListener("click", () => {
+        decomposeBtn.style.display = "none"; // Hide the 'Dispose' button
+        companySelection.style.display = "block"; // Show the company list
+      });
+
+      // Handle company selection
+      companyListItems.forEach((item) => {
+        item.addEventListener("click", () => {
+          const selectedCompany = item.getAttribute("data-company");
+          alert("You selected: " + selectedCompany); // Show the selected company
+          companySelection.style.display = "none"; // Hide company list
+          productInput.style.display = "block"; // Show product input form
+        });
+      });
+
+      // Handle product submission
+      submitProductBtn.addEventListener("click", () => {
+        const productName = productNameInput.value.trim();
+        if (productName) {
+          productInput.style.display = "none"; // Hide product input form
+          reward.style.display = "block"; // Show reward message
+
+          // Generate QR code for the reward
+          const rewardUrl = `https://www.example.com/reward?product=${encodeURIComponent(
+            productName
+          )}`;
+
+          // Generate the QR code as an image and display it
+          QRCode.toDataURL(
+            rewardUrl,
+            { width: 200, height: 200 },
+            function (err, url) {
+              if (err) console.error(err);
+              const img = document.createElement("img");
+              img.src = url;
+              img.alt = "QR Code for Reward";
+              qrcodeContainer.innerHTML = ""; // Clear previous QR code (if any)
+              qrcodeContainer.appendChild(img); // Add the QR code image to the container
+            }
+          );
+        } else {
+          alert("Please enter a product name.");
+        }
+      });
+    </script>
+  </body>
+</html>

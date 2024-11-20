@@ -1,70 +1,39 @@
-# Hackathon Repository
+# login-and-registration-system-using-mongodb
 
-## Institution: Siddaganga Institute of Technology  
-**Innovation Council & Siddaganga TBI**
+## Intrduction
 
-Welcome to the repository for the hackathon organized by **Innovation Council** and **Siddaganga TBI**. This repository is a central hub for storing and collaborating on data related to our hackathon project.
-
-### Problem Statement
-
-The goal of this hackathon is to foster creativity, teamwork, and innovation among participants. We will work on solving challenges related to **[specific domain or technology]**, with the objective of **[specific problem you are addressing]**.
-
----
-
-## Team Details
-
-**Team Name:** [PEOJECT-K]
-
-### Team Members
-
-1. **Member 1**  
-   - **Name:** [VIKAS R]  
-   - **USN:** [1SI23CS417]
-
-2. **Member 2**  
-   - **Name:** [MITHUN V]  
-   - **USN:** [1SI23CI402]
-
-3. **Member 3**  
-   - **Name:** [NAMITH H]  
-   - **USN:** [1SI23CI403]
-
-4. **Member 4**  
-   - **Name:** [V R MANOJ KUMAR]  
-   - **USN:** [1SI23CI406]
-
----
-
-## Project Description
-
-Solution Overview:Eco Sense combines AI/ML, IoT, and biotechnology to tackle waste management and food spoilage. It uses microbial-powered community disposal stations and IoT-enabled smart packaging to create a sustainable ecosystem, reducing landfill waste and minimizing food spoilage.
-
-Detailed Solution:
-Microbial-Powered Disposal Stations: Uses microbes to biodegrade plastics and organic waste at community hubs. AI assists in waste classification and provides insights on waste accumulation.
-IoT-Enabled Smart Packaging: Biodegradable packaging with IoT sensors detects spoilage indicators, sending alerts via a mobile app, allowing users to manage food before spoilage.
-Cloud-Based Analytics: Aggregates data from disposal stations and sensors for analysis, offering insights on waste patterns and environmental impact.
-Mobile Application: Acts as an interface, notifying users about food nearing expiry, station locations, and waste reduction tips, with a rewards system for responsible behavior.
-
-How it Addresses the ProblemEcoSense offers real-time solutions for waste reduction and food spoilage, helping communities and consumers adopt sustainable habits.
-
----
-
-## Technologies Used
-
-Languages: Python, JavaScript (Node.js), HTML/CSS
-Frameworks: Flask/Django, Streamlit, TensorFlow/PyTorch, OpenCV
-Hardware: IoT Sensors (RFID, weight, temperature, humidity), Raspberry Pi/Arduino, Smart Packaging
-Database: SQLite/MySQL
-Cloud Platforms (optional): AWS IoT, Firebase
+It is a simple login and registration application. This application is developed in HTML, CSS, JS, Python Flask and MongoDB. The project aims to understand how MongoDB works in real-time applications.
 
 
----
+## Installation
 
-## Getting Started
+Install pre-requisites packages
 
-To get started with this repository, follow these steps:
+```
+pip install Flask
+pip install pymongo
+```
 
-1. Clone the repository:
+## How to run it
 
-   ```bash
- https://github.com/vrmanojkumar/project-k.git
+You can run the python file by giving this below command on your command prompt.
+
+```
+python app.py
+```
+
+## Output
+### Login (Signin)
+<img src='https://github.com/JafirDon/login-and-registration-system-using-flask-mongodb/blob/main/static/images/output1.JPG' width="50%" ></img> <br><br>
+### Validation
+<img src='https://github.com/JafirDon/login-and-registration-system-using-flask-mongodb/blob/main/static/images/output2.JPG' width="50%" ></img> <br><br>
+### Registration (Signup)
+<img src='https://github.com/JafirDon/login-and-registration-system-using-flask-mongodb/blob/main/static/images/output3.JPG' width="50%" ></img> <br><br>
+
+
+## License
+MIT License
+<br>
+<br>
+
+### Thank you

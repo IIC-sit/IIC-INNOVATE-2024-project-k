@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoSense Smart Disposal & Expiry Management</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f1f1f1;
+        color: #333;
+      }
+      header {
+        background-color: #4caf50;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+        font-size: 2em;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 40px auto;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      .box {
+        background-color: white;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        padding: 20px;
+        width: 30%;
+        margin: 10px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      }
+      .box h3 {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+        color: #4caf50;
+      }
+      .box p {
+        font-size: 1.1em;
+        margin: 10px 0;
+      }
+      .box button {
+        padding: 12px 20px;
+        font-size: 1em;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      .box button:hover {
+        background-color: #0056b3;
+      }
+      .footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #4caf50;
+        color: white;
+        font-size: 1.1em;
+      }
+      .footer a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+          align-items: center;
+        }
+        .box {
+          width: 80%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>EcoSense Smart Disposal & Expiry Management</header>
+
+    <div class="container">
+      <!-- Expiry Notification Box -->
+      <div class="box">
+        <h3>Expiry Notification</h3>
+        <p>
+          Your food/product is nearing expiration. Please use it before the
+          expiry date.
+        </p>
+        <button onclick="alert('You will be notified about your food expiry!')">
+          Get Notified
+        </button>
+      </div>
+
+      <!-- Donation Box -->
+      <div class="box">
+        <h3>Donate</h3>
+        <p>
+          If you are not using your product, consider donating it to a local
+          charity.
+        </p>
+        <button
+          onclick="window.location.href='http://127.0.0.1:5501/templates/donate.html'"
+        >
+          Donate Now
+        </button>
+        <ul id="donation-list" class="charity-list" style="display: none">
+          <li>Charity A - Local Region</li>
+          <li>Charity B - Nearby Area</li>
+          <li>Charity C - Your City</li>
+        </ul>
+      </div>
+
+      <!-- Product Disposal and Add Products Box Row -->
+      <div class="container">
+        <!-- Disposal Box -->
+        <div class="box">
+          <h3>Product Disposal</h3>
+          <p>
+            If the product is no longer usable, it’s time to dispose of it
+            responsibly.
+          </p>
+          <button
+            onclick="window.location.href='http://127.0.0.1:5501/templates/decompose.html'"
+          >
+            Dispose Product
+          </button>
+        </div>
+
+        <!-- Add Products Box -->
+        <div class="box">
+          <h3>Add Products</h3>
+          <p>
+            Add new items to track their expiration and decomposition levels.
+          </p>
+          <button
+            onclick="window.location.href='http://127.0.0.1:5501/templates/add_product.html'"
+          >
+            Add Products
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- View Items Section -->
+    <div class="container">
+      <div class="box">
+        <h3>View Items</h3>
+        <p>See detailed list of items you need to manage.</p>
+        <button
+          onclick="window.location.href='http://127.0.0.1:5501/templates/view_products.html'"
+        >
+          View Items
+        </button>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>
+        <strong>EcoSense System</strong> | <a href="#">Privacy Policy</a> |
+        <a href="#">Contact Us</a>
+      </p>
+    </div>
+  </body>
+</html>

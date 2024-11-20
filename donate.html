@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NGO and Charity List</title>
+    <style>
+      /* Reset styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Body and background styling */
+      body {
+        font-family: "Arial", sans-serif;
+        background: url("https://images.unsplash.com/photo-1493134085077-d9c609f71b5b?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fG5hdHVyZXxlbnwwfDB8fHxl8&ixlib=rb-1.2.1&q=80&w=1080")
+          no-repeat center center fixed;
+        background-size: cover;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      /* Header Section */
+      header {
+        background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+        color: white;
+        padding: 80px 0;
+        text-align: center;
+        border-bottom: 2px solid #fff;
+      }
+
+      header h1 {
+        font-size: 3.5em;
+        margin-bottom: 10px;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      header p {
+        font-size: 1.4em;
+        margin-top: 0;
+        font-style: italic;
+      }
+
+      /* Container for content */
+      .container {
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      /* NGO List Section */
+      .ngo-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin: 50px 0;
+      }
+
+      .ngo-card {
+        background-color: white;
+        border-radius: 15px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        width: 22%;
+        margin-bottom: 30px;
+        text-align: center;
+        padding: 20px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .ngo-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Image Styling */
+      .ngo-card img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin-bottom: 15px;
+        object-fit: cover;
+      }
+
+      /* NGO Title and Description */
+      .ngo-card h2 {
+        font-size: 1.8em;
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      .ngo-card p {
+        font-size: 1em;
+        color: #666;
+        margin-bottom: 15px;
+      }
+
+      /* Button Styling */
+      .ngo-card .btn {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 1.1em;
+        display: inline-block;
+        margin-top: 10px;
+        transition: background-color 0.3s ease;
+      }
+
+      .ngo-card .btn:hover {
+        background-color: #45a049;
+      }
+
+      /* Footer Section */
+      footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        font-size: 1.2em;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .ngo-card {
+          width: 45%;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .ngo-card {
+          width: 100%;
+        }
+
+        header h1 {
+          font-size: 2.5em;
+        }
+
+        header p {
+          font-size: 1.2em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Support NGOs and Charities</h1>
+        <p>
+          Make a difference by contributing to these wonderful organizations.
+        </p>
+      </div>
+    </header>
+
+    <section class="ngo-list">
+      <div class="container">
+        <div class="ngo-card">
+          <img
+            src="https://www.savethechildren.org/s3fs-public/styles/hero_full_width/public/2022-09/2022-hero-image-save-the-children_0.jpg"
+            alt="Save the Children"
+          />
+          <h2>Save the Children</h2>
+          <p>
+            Committed to improving the lives of children and providing them with
+            better opportunities.
+          </p>
+          <a href="https://www.savethechildren.org" target="_blank" class="btn"
+            >Learn More</a
+          >
+        </div>
+        <div class="ngo-card">
+          <img
+            src="https://www.worldwildlife.org/assets/images/wwf-logo_1.png"
+            alt="World Wildlife Fund"
+          />
+          <h2>World Wildlife Fund</h2>
+          <p>
+            Working to preserve nature and reduce the most pressing threats to
+            the diversity of life on Earth.
+          </p>
+          <a href="https://www.worldwildlife.org" target="_blank" class="btn"
+            >Learn More</a
+          >
+        </div>
+        <div class="ngo-card">
+          <img
+            src="https://www.oxfam.org/sites/default/files/styles/oxfam-news-gallery/public/2023-09/Oxfam_hero.jpg"
+            alt="Oxfam"
+          />
+          <h2>Oxfam</h2>
+          <p>A global movement to end the injustice of poverty.</p>
+          <a href="https://www.oxfam.org" target="_blank" class="btn"
+            >Learn More</a
+          >
+        </div>
+        <div class="ngo-card">
+          <img
+            src="https://www.redcross.org/content/dam/redcross/atg/Red-Cross-logo%20-%20stacked.png"
+            alt="Red Cross"
+          />
+          <h2>Red Cross</h2>
+          <p>Providing humanitarian aid to people in need across the world.</p>
+          <a href="https://www.redcross.org" target="_blank" class="btn"
+            >Learn More</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2024 NGO and Charity List. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
